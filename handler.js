@@ -1,7 +1,8 @@
 /*
  # ------------√ ×------------
-    # Agradecimientos :: AzamiJs
     # Agradecimientos :: ZyxlJs
+    # Agradecimientos :: Destroy
+    # Agradecimientos :: AzamiJs
     # Agradecimientos :: GataDios
 
     - Recuerda dejar los creditos, no quites los creditos de los autores del código!
