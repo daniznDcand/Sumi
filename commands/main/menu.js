@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+pimport fetch from 'node-fetch';
 import { getDevice } from '@whiskeysockets/baileys';
 import fs from 'fs';
 import axios from 'axios';
@@ -262,6 +262,7 @@ const time = client.uptime ? formatearMs(Date.now() - client.uptime) : "Desconoc
 .꒷🌳.𖦹˙ /setbotname › /setname + _<value>_
 .꒷🌳.𖦹˙ /setbanner › /setmenubanner
 .꒷🌳.𖦹˙ /seticon
+.꒷🌳.𖦹˙ /setbotprefix + _<value>_
 .꒷🌳.𖦹˙ /setbotcurrency + _<value>_
 .꒷🌳.𖦹˙ /setbotowner + _<value>_
 .꒷🌳.𖦹˙ /setchannel + _<value>_
