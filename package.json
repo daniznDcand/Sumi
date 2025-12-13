@@ -1,6 +1,6 @@
 {
-  "name": "megumin-bot",
-  "version": "3.0",
+  "name": "alya",
+  "version": "1.0",
   "description": "Bot WhatsApp",
   "main": "index.js",
   "type": "module",
@@ -14,7 +14,7 @@
     "bot-wa",
     "multi-device"
   ],
-  "author": "David-Chian",
+  "author": "DevZyxlJs",
   "license": "MIT",
   "engines": {
     "node": ">=21.7.3",
