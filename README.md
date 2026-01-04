@@ -114,8 +114,8 @@ npm start
 | Dashboard | [Abrir](https://api.stellarwa.xyz) |
 | Store | [Abrir](https://api.stellarwa.xyz/store) 
 | Soporte | [Visitar](https://api.stellarwa.xyz/ticket) 
-| Terminos | [Ver](https://stellarwa.xyz/terms) 
-| Estado de Servicios | [Ver](https://stellarwa.xyz/status) 
+| Terminos | [Ver](https://api.stellarwa.xyz/terms) 
+| Estado de Servicios | [Ver](https://api.stellarwa.xyz/status) 
 
 </details>
 
