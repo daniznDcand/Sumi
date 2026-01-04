@@ -4,8 +4,6 @@ import chalk from 'chalk';
 global.owner = ['5492916450307', '5216671548329']
 global.sessionName = 'Sessions/Owner'
 global.version = '^2.0'
-global.pairing_code = true
-global.number_bot = ''
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
