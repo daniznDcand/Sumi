@@ -144,7 +144,7 @@ npm start
 
 ### 🪶 Colaboradores
 <a href="https://api.stellarwa.xyz">
-  <img src="https://contrib.rocks/image?repo=DevZyxlJs/AlyaBot-MD" />
+  <img src="https://contrib.rocks/image?repo=DevZyxlJs/AlyaBot-MD&v=4" />
 </a>
 
 ### 🌺 Creditos Principales
