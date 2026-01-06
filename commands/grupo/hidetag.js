@@ -2,7 +2,7 @@ export default {
   command: ['hidetag', 'tag'],
   category: 'grupo',
   isAdmin: true,
-  run: async ({client, m, args}) => {
+  run: async (client, m, args) => {
     const text = args.join(' ')
     const groupMetadata = m.isGroup ? await client.groupMetadata(m.chat).catch(() => null) : null
     const groupParticipants = groupMetadata?.participants || []
