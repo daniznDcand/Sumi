@@ -90,6 +90,35 @@ npm start
 
 ---
 
+### Instalación en Termux
+
+<details>
+<summary><strong>🌴 Ter</strong> — Mux</summary>
+
+```bash
+git clone https://github.com/DevZyxlJs/AlyaBot-MD
+```
+
+```bash
+cd AlyaBot-MD
+```
+
+```bash
+yarn install
+```
+
+```bash
+npm install
+```
+
+```bash
+npm start
+```
+
+</details>
+
+---
+
 ### Patrocinadores del Proyecto
 
 <details>
