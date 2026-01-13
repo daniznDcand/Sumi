@@ -60,7 +60,7 @@ const resolvedUsers = await Promise.all(
       botprimary: botprimary
     };
 
-      const img = await client.profilePictureUrl(m.chat, 'image').catch(() => 'https://cdn.stellarwa.xyz/files/6qTX.jpeg')
+      const img = await client.profilePictureUrl(m.chat, 'image').catch(() => 'https://cdn.sockywa.xyz/files/6qTX.jpeg')
 
     try {
       let message = `ੈ🪻‧₊˚ Grupo ◢ ${groupName} ◤*\n\n`;
