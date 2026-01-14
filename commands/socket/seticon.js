@@ -1,25 +1,12 @@
 import fetch from 'node-fetch';
 import FormData from 'form-data';
 
-async function uploadToCatbox(buffer, mime) {
-  const form = new FormData();
-  form.append('reqtype', 'fileupload');
-  form.append('fileToUpload', buffer, {
-    filename: `${Date.now()}.${mime.split('/')[1]}`,
-    contentType: mime
-  });
-
-  const res = await fetch('https://catbox.moe/user/api.php', {
-    method: 'POST',
-    body: form
-  });
-
-  const url = await res.text();
-  if (!url.startsWith('http')) {
-    throw new Error('Falló la subida a Catbox: ' + url);
-  }
-
-  return url;
+async function uploadImage(media, mime) {
+  const body = new FormData()
+  body.append('files[]', buffer, `file.${mime.split('/')[1]}`)
+  const res = await fetch('https://uguu.se/upload.php', { method: 'POST', body, headers: body.getHeaders() })
+  const json = await res.json()
+  return json.files?.[0]?.url
 }
 
 export default {
@@ -49,7 +36,7 @@ export default {
     const media = await q.download();
     if (!media) return m.reply('🍒 No se pudo descargar la imagen.');
 
-    const link = await uploadToCatbox(media, mime);
+    const link = await uploadImage(media, mime);
     config.icon = link;
 
     return m.reply(`🌾 Se ha actualizado el icon de *${config.namebot2}*!`);
