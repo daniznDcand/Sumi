@@ -17,12 +17,12 @@ export default {
       const mime = q.mimetype || q.msg?.mimetype || ''
 
       if (!mime) return m.reply(`🌾 Envía una *imagen* junto al comando *${prefix + command}*`)
-      if (!/image\/(jpe?g|png)/.test(mime)) {
+      if (!/image\/(png|jpe?g|gif)|video\/mp4/.test(mime)) {
         return m.reply(`🌱 El formato *${mime}* no es compatible`)
       }
 
       const buffer = await q.download()
-      const url = await uploadToUguu(buffer)
+      const url = await uploadToUguu(buffer, mime)
 
       if (!url) return m.reply('🍒 No se pudo *subir* la imagen')
 
@@ -39,16 +39,10 @@ export default {
   },
 }
 
-async function uploadToUguu(buffer) {
+async function uploadToUguu(buffer, mime) {
   const body = new FormData()
-  body.append('files[]', buffer, 'image.jpg')
-
-  const res = await fetch('https://uguu.se/upload.php', {
-    method: 'POST',
-    body,
-    headers: body.getHeaders(),
-  })
-
+  body.append('files[]', buffer, `file.${mime.split('/')[1]}`)
+  const res = await fetch('https://uguu.se/upload.php', { method: 'POST', body, headers: body.getHeaders() })
   const json = await res.json()
   return json.files?.[0]?.url
 }
