@@ -4,9 +4,9 @@ export default {
     'alerts', 'alertas',
     'nsfw',
     'antilink', 'antienlaces', 'antilinks',
-    'rpg', 'economy', 'economia',
+    'rpg', 'economy', 'bye', 'despedidas', 'economia',
     'gacha',
-    'adminonly', 'onlyadmin', 'pokes'
+    'adminonly', 'goodbye', 'onlyadmin', 'pokes'
   ],
   category: 'grupo',
   isAdmin: true,
@@ -20,6 +20,9 @@ export default {
       antienlaces: 'antilinks',
       antilink: 'antilinks',
       welcome: 'welcome',
+      goodbye: 'goodbye',
+      despedidas: 'goodbye',
+      bye: 'goodbye',
       bienvenidas: 'welcome',
       alerts: 'alerts',
       alertas: 'alerts',
@@ -36,6 +39,7 @@ export default {
     const featureNames = {
       antilinks: 'el *AntiEnlace*',
       welcome: 'el mensaje de *Bienvenida*',
+      goodbye: 'el mensaje de *Despedida*',
       alerts: 'las *Alertas*',
       rpg: 'los comandos de *Economía*',
       gacha: 'los comandos de *Gacha*',
@@ -47,6 +51,7 @@ export default {
     const featureTitles = {
       antilinks: 'AntiEnlace',
       welcome: 'Bienvenida',
+      goodbye: 'Despedida',
       alerts: 'Alertas',
       rpg: 'Economía',
       gacha: 'Gacha',
