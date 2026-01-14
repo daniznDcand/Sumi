@@ -51,6 +51,7 @@ const resolvedUsers = await Promise.all(
       bot: chat.bannedGrupo ? '✘ Desactivado' : '✓ Activado',
       antiLinks: chat.antilinks ? '✓ Activado' : '✘ Desactivado',
       welcomes: chat.welcome ? '✓ Activado' : '✘ Desactivado',
+      byes: chat.goodbye ? '✓ Activado' : '✘ Desactivado',
       alerts: chat.alerts ? '✓ Activado' : '✘ Desactivado',
       gacha: chat.gacha ? '✓ Activado' : '✘ Desactivado',
       rpg: chat.rpg ? '✓ Activado' : '✘ Desactivado',
@@ -74,6 +75,7 @@ const resolvedUsers = await Promise.all(
       message += `𖹭  ׄ  ְ 🥗 ${botname} › *${settings.bot}*\n`;
       message += `𖹭  ׄ  ְ 🥗 AntiLinks › *${settings.antiLinks}*\n`;
       message += `𖹭  ׄ  ְ 🥗 Bienvenidas › *${settings.welcomes}*\n`;
+      message += `𖹭  ׄ  ְ 🥗 Despedidas › *${settings.byes}*\n`;
       message += `𖹭  ׄ  ְ 🥗 Alertas › *${settings.alerts}*\n`;
       message += `𖹭  ׄ  ְ 🥗 Gacha › *${settings.gacha}*\n`;
       message += `𖹭  ׄ  ְ 🥗 Pokes › *${settings.pokes}*\n`;
