@@ -42,7 +42,7 @@ export default {
     const media = await q.download();
     if (!media) return m.reply(',🍒 No se pudo descargar el archivo.');
 
-    const link = await uploadToCatbox(media, mime);
+    const link = await uploadImage(media, mime);
     config.banner = link;
 
     return m.reply(`🌾 Se ha actualizado el banner de *${config.namebot2}*!`);
