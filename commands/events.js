@@ -66,7 +66,7 @@ export default async (client, m) => {
           await client.sendMessage(anu.id, { image: { url: pp }, caption, ...fakeContext })
         }
 
-        if ((anu.action === 'remove' || anu.action === 'leave') && chat?.welcome && (!primaryBotId || primaryBotId === botId)) {
+        if ((anu.action === 'remove' || anu.action === 'leave') && chat?.goodbye && (!primaryBotId || primaryBotId === botId)) {
           const caption = `╭┈──̇─̇─̇────̇─̇─̇──◯◝
 ┊「 *Hasta pronto (⁠╥⁠﹏⁠╥⁠)* 」
 ┊︶︶︶︶︶︶︶︶︶︶︶
