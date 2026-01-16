@@ -24,9 +24,9 @@ export default {
 
         const message2 =
           `🍁 ꨩᰰ𑪐𑂺 ˳ ׄ 𝖯𝗂𝗇𝗍𝖾𝗋𝖾𝗌𝗍 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽𝖾𝗋  ࣭𑁯ᰍ   ̊ ܃܃\n\n` +
-          `> 🍃 ᩴᩴ̴𖫲᮫ִ۫𝆬  Resultados para tu enlace › *${text}*\n\n` +
-          `𖣣ֶㅤ֯⌗ 🍄̷ ׄ ⬭ Título › *${result.title}*\n` +
-          `𖣣ֶㅤ֯⌗ 🍄̷ ׄ ⬭ Tipo › *${isVideo ? "Video" : "Imagen"}*`; 
+          `> 🍃 Resultados para tu enlace › *${text}*\n\n` +
+          `𖣣ֶㅤ֯⌗ 🍄 ⬭ Título › *${result.title}*\n` +
+          `𖣣ֶㅤ֯⌗ 🍄 ⬭ Tipo › *${result.type === "video" ? "Video" : "Imagen"}*`
 
         await client.sendMessage(
           m.chat,
@@ -42,32 +42,46 @@ export default {
         const json = jsons.data
 
         if (!json || json.length === 0) {
-          return m.reply(`✐ No se encontraron resultados para *${text}*`)
+          return m.reply(`🌵 No se encontraron resultados para *${text}*`)
         }
 
-        const index = Math.floor(Math.random() * json.length)
-        const result = json[index]
+        if (json.length > 1) {
+          const checked = json.slice(0, 10) 
+          const medias = checked.map(r => ({
+            type: 'image',
+            data: { url: r.hd || r.url },
+            caption:
+              `🍁 ꨩᰰ𑪐𑂺 ˳ ׄ 𝖯𝗂𝗇𝗍𝖾𝗋𝖾𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁 ࣭𑁯ᰍ   ̊ ܃܃\n\n` +
+              `> 🍃 Resultados para › *${text}*\n\n` +
+              `${r.title ? `𖣣ֶㅤ֯⌗ 🍄 ⬭ Título › ${r.title}\n` : ''}` +
+              `${r.description ? `𖣣ֶㅤ֯⌗ 🍄 ⬭ Descripción › ${r.description}\n` : ''}` +
+              `${r.full_name ? `𖣣ֶㅤ֯⌗ 🍄 ⬭ Autor › ${r.full_name}\n` : ''}` +
+              `${r.likes ? `𖣣ֶㅤ֯⌗ 🍄 ⬭ Likes › ${r.likes}\n` : ''}` +
+              `${r.created ? `𖣣ֶㅤ֯⌗ 🍄 ⬭ Publicado › ${r.created}\n` : ''}`
+          }))
+          await client.sendAlbumMessage(m.chat, medias, { quoted: m })
+        } else {
+          const result = json[0]
+          const message =
+            `🍁 ꨩᰰ𑪐𑂺 ˳ ׄ 𝖯𝗂𝗇𝗍𝖾𝗋𝖾𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁 ࣭𑁯ᰍ   ̊ ܃܃\n\n` +
+            `> 🍃 Resultados para › *${text}*\n\n` +
+            `𖣣ֶㅤ֯⌗ 🍄 ⬭ Título › *${result.title}*\n` +
+            `𖣣ֶㅤ֯⌗ 🍄 ⬭ Descripción › *${result.description}*\n` +
+            `𖣣ֶㅤ֯⌗ 🍄 ⬭ Autor › *${result.full_name}*\n` +
+            `𖣣ֶㅤ֯⌗ 🍄 ⬭ Likes › *${result.likes}*\n` +
+            `𖣣ֶㅤ֯⌗ 🍄 ⬭ Publicado › *${result.created}*`
 
-        const message =
-          `🍁 ꨩᰰ𑪐𑂺 ˳ ׄ 𝖯𝗂𝗇𝗍𝖾𝗋𝖾𝗌𝗍 𝖲𝖾𝖺𝗋𝖼𝗁 ࣭𑁯ᰍ   ̊ ܃܃\n\n` +
-          `> 🍃 ᩴᩴ̴𖫲᮫ִ۫𝆬   Resultados para › *${text}*\n\n` +
-          `𖣣ֶㅤ֯⌗ 🍄̷ ׄ ⬭  Título › *${result.title}*\n` +
-          `𖣣ֶㅤ֯⌗ 🍄̷ ׄ ⬭  Descripción › *${result.description}*\n` +
-          `𖣣ֶㅤ֯⌗ 🍄̷ ׄ ⬭  Autor › *${result.full_name}*\n` +
-          `𖣣ֶㅤ֯⌗ 🍄̷ ׄ ⬭  Likes › *${result.likes}*\n` +
-          `𖣣ֶㅤ֯⌗ 🍄̷ ׄ ⬭  Publicado › *${result.created}*`;
-
-        await client.sendMessage(
-          m.chat,
-          { image: { url: result.hd }, caption: message },
-          { quoted: m },
-        )
+          await client.sendMessage(
+            m.chat,
+            { image: { url: result.hd }, caption: message },
+            { quoted: m },
+          )
+        }
       }
     } catch (e) {
-     // console.error('[Pinterest Error]', e)
       await client.reply(
         m.chat,
-       msgglobal,
+        msgglobal,
         m
       )
     }
