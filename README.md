@@ -28,6 +28,48 @@ Alya Bot es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofre
 ## Informaciones Importantes
 
 <details>
+<summary><strong>🌵 Configuración de acceso al subbot</strong> — Web</summary>
+
+### 1. Desde Termux (local)
+```
+localhost:PUERTO
+```
+Ejemplo:
+```
+localhost:3000
+```
+
+### 2. Desde un servidor hosting (externo)
+```
+IP_DEL_SERVIDOR:PUERTO
+```
+Ejemplo:
+```
+1.00.00.00:3000
+```
+
+### 3. Ajustar el puerto en el código
+Ir a:
+```
+lib/system/web.js
+```
+Buscar la línea donde se define el `PORT` y ajustarla al puerto de tu servidor:
+
+```js
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
+```
+
+Si tu hosting usa otro puerto (ej. `8080`):
+```js
+const PORT = process.env.PORT || 8080;
+```
+
+</details>
+
+<details>
 <summary><strong>🌵 Información</strong> — Recomendado</summary>
 
 Evita completamente usar forks, mods o versiones alteradas de Baileys.
