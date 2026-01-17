@@ -1,6 +1,7 @@
 import "./settings.js"
 import handler from './handler.js'
 import events from './commands/events.js'
+impprt web from './lib/system/web.js'
 import {
   Browsers,
   makeWASocket,
@@ -235,6 +236,7 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
 
     if (connection == "open") {
      // client.uptime = Date.now();
+     await web();
  console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }))
     }
 })
