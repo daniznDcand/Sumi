@@ -50,6 +50,8 @@ Ir a:
 
 [lib/system/web.js](https://github.com/DevZyxlJs/AlyaBot-MD/blob/main/lib%2Fsystem%2Fweb.js)
 
+Linea: 34
+
 Buscar la línea donde se define el `PORT` y ajustarla al puerto de tu servidor:
 
 ```js
