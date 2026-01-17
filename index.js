@@ -25,6 +25,8 @@ import db from "./lib/system/database.js";
 import { startSubBot } from './lib/subs.js';
 import { exec, execSync } from "child_process";
 
+web()
+
 const log = {
   info: (msg) => console.log(chalk.bgBlue.white.bold(`INFO`), chalk.white(msg)),
   success: (msg) =>
