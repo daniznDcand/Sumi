@@ -65,11 +65,11 @@ let phoneInput = "";
 
 const { say } = cfonts
 
-say('alya', {
+say('alya san', {
 align: 'center',           
 gradient: ['red', 'blue'] 
 })
-say('WhatsApp Multi Device, Hecho Con Amor Por ZyxlJs', {
+say('WhatsApp Bot', {
 font: 'console',
 align: 'center',
 gradient: ['blue', 'magenta']
@@ -236,7 +236,7 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
 
     if (connection == "open") {
      // client.uptime = Date.now();
-     await web(client);
+     await web(client)
  console.log(boxen(chalk.bold(' ¡CONECTADO CON WHATSAPP! '), { borderStyle: 'round', borderColor: 'green', title: chalk.green.bold('● CONEXIÓN ●'), titleAlignment: 'center', float: 'center' }))
     }
 })
