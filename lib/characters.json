@@ -6,6 +6,131 @@
     "source": "Sewayaki Kitsune no Senko-san",
     "keyword": "senko_(sewayaki_kitsune_no_senko-san)"
   },
+{
+    "name": "Asuna Yuuki",
+    "value": 60000,
+    "gender": "Mujer",
+    "source": "Sword Art Online",
+    "keyword": "asuna_(sao)"
+  },
+{
+    "name": "Kitigaya Hazuto",
+    "value": 60000,
+    "gender": "Hombre",
+    "source": "Sword Art Online",
+    "keyword": "kirigaya_kazuto"
+  },
+{
+    "name": "Eugeo",
+    "value": 30000,
+    "gender": "Hombre",
+    "source": "Sword Art Online",
+    "keyword": "eugeo"
+  },
+{
+    "name": "Sinon",
+    "value": 20000,
+    "gender": "Mujer",
+    "source": "Sword Art Online",
+    "keyword": "sinon_(sao-alo)"
+  },
+{
+    "name": "Klein",
+    "value": 30000,
+    "gender": "Hombre",
+    "source": "Sword Art Online",
+    "keyword": "klein_(sao)"
+  },
+{
+    "name": "Leafa",
+    "value": 45000,
+    "gender": "Mujer",
+    "source": "Sword Art Online",
+    "keyword": "leafa_(sao)"
+  },
+{
+    "name": "Alicia Rue",
+    "value": 15000,
+    "gender": "Mujer",
+    "source": "Sword Art Online",
+    "keyword": "alicia_rue"
+  },
+{
+    "name": "Eydis",
+    "value": 15000,
+    "gender": "Mujer",
+    "source": "Sword Art Online",
+    "keyword": "eydis_(sao)"
+  }, 
+{
+    "name": "Ayano Keiko",
+    "value": 15000,
+    "gender": "Mujer",
+    "source": "Sword Art Online",
+    "keyword": "ayano_keiko"
+  },
+{
+    "name": "Quinella",
+    "value": 50000,
+    "gender": "Mujer",
+    "source": "Sword Art Online",
+    "keyword": "quinella"
+  },
+{
+    "name": "Rosalia",
+    "value": 15000,
+    "gender": "Mujer",
+    "source": "Sword Art Online",
+    "keyword": "rosalia_(sword_art_online)"
+  },
+{
+    "name": "Darkness",
+    "value": 45000,
+    "gender": "Mujer",
+    "source": "kono subarashii Sekai ni shukufuku Wo!": "darkness_(konosuba)"
+  },
+{
+    "name": "Wolbach",
+    "value": 20000,
+    "gender": "Mujer",
+    "source": "kono subarashii Sekai ni shukufuku Wo!",
+    "keyword": "wolbach"
+  },
+{
+    "name": "Belzerg Stylish Sword Iris",
+    "value": 50000,
+    "gender": "Mujer",
+    "source": "kono subarashii Sekai ni shukufuku Wo!",
+    "keyword": "iris_(konosuba)"
+  },
+{
+    "name": "Amy",
+    "value": 25000,
+    "gender": "Mujer",
+    "source": "kono subarashii Sekai ni shukufuku Wo!",
+    "keyword": "amy_(konosuba)"
+  },
+{
+    "name": "Arue",
+    "value": 25000,
+    "gender": "Mujer",
+    "source": "kono subarashii Sekai ni shukufuku Wo!",
+    "keyword": "arue_(konosuba)"
+  },
+{
+    "name": "Cecily",
+    "value": 25000,
+    "gender": "Mujer",
+    "source": "kono subarashii Sekai ni shukufuku Wo!",
+    "keyword": "cecily_(konosuba)"
+  },
+{
+    "name": "Sylvia",
+    "value": 100000,
+    "gender": "Mujer",
+    "source": "kono subarashii Sekai ni shukufuku Wo!",
+    "keyword": "sylvia_(konosuba)"
+  },
   {
     "name": "Erika Amano",
     "value": 47297,
