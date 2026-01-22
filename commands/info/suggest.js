@@ -1,14 +1,9 @@
 export default {
   command: ['report', 'reporte', 'sug', 'suggest'],
   category: 'info',
-  run: async (client, m, args) => {
+  run: async (client, m, args, command, text, prefix) => {
     const texto = args.join(' ').trim()
     const now = Date.now()
-    const body = m.body || m.text || ''
-    const prefix = body.charAt(0)
-    const command = body.slice(prefix.length).trim().split(/ +/).shift().toLowerCase()
-    const text =
-      command === 'report' ? 'El comando play no está funcionando' : 'Agreguen un comando…'
 
     const cooldown = global.db.data.users[m.sender].sugCooldown || 0
     const restante = cooldown - now
@@ -61,7 +56,7 @@ export default {
         await global.client.sendContextInfoIndex('120363416930479619@g.us', reportMsg, {}, null, false, null, {
           banner: pp,
           title: tipo2,
-          body: '✧ Antento Staff, mejoren.',
+          body: dev,
           redes: global.db.data.settings[client.user.id.split(':')[0] + "@s.whatsapp.net"].link
         })
    
