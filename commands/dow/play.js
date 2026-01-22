@@ -1,7 +1,6 @@
 import yts from 'yt-search'
 import fetch from 'node-fetch'
 import { getBuffer } from '../../lib/message.js'
-import { toPTT } from '../../lib/converter.js'
 
 const isYTUrl = (url) => /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/i.test(url)
 
@@ -57,13 +56,11 @@ export default {
       }
 
       const audioBuffer = await getBuffer(result.result.dl_url)
-      const pttBuffer = await toPTT(audioBuffer, 'mp3')
 
       const mensaje = {
-        audio: pttBuffer,
-        mimetype: 'audio/ogg; codecs=opus',
-        fileName: `${title}.ogg`,
-        ptt: true
+        audio: audioBuffer,
+        mimetype: 'audio/mpeg',
+        fileName: `${title}.mp3`
       }
 
       await client.sendMessage(m.chat, mensaje, { quoted: m })
