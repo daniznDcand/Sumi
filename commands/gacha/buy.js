@@ -35,7 +35,7 @@ export default {
     if (remainingTime > 0)
       return m.reply(`🌽 Debes esperar *${msToTime(remainingTime)}* para usar *"${m.command}"* nuevamente`)
     if (!m.quoted) return m.reply(`🍒 Responde a una waifu para reclamarla.`)
-    chatConfig.personajesReservados ||= []
+    //chatConfig.personajesReservados ||= []
     let reservedCharacter = null
     const quotedId = m.quoted?.id    
     if (quotedId) {
