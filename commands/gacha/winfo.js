@@ -75,7 +75,7 @@ export default {
 
     let estado = '*Libre*'
     if (usuarioPoseedor)
-      estado = `*Reclamado por ${db.users[ownerId]?.name || ownerId.split('@')[0]}*\n☆ Fecha de reclamo › *${claimStatus}*`
+      estado = `*Reclamado por ${db.users[ownerId]?.name || ownerId.split('@')[0]}*\n𖹭  ׄ  ְ 🥗 Fecha de reclamo › *${claimStatus}*`
     else if (reservado)
       estado = `*Reservado por ${db.users[reservado.userId]?.name || reservado.userId.split('@')[0]}*`
 
