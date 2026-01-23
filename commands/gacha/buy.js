@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 function msToTime(duration) {
   const seconds = Math.floor((duration / 1000) % 60)
   const minutes = Math.floor((duration / (1000 * 60)) % 60)
@@ -23,7 +25,7 @@ const normalize = (str = '') =>
      .trim()
 
 export default {
-  command: ['claim', 'buy', 'c'],
+  command: ['claim', 'buy', 'cc'],
   category: 'gacha',
   run: async (client, m, args) => {
     const db = global.db.data
@@ -34,6 +36,7 @@ export default {
     const botSettings = db.settings[botId]
     const monedas = botSettings.currency
     const user = chatConfig.users[userId]
+    const now = Date.now()
 
     if (chatConfig.adminonly || !chatConfig.gacha)
       return m.reply(`🌱 Estos comandos estan desactivados en este grupo.`)
@@ -47,21 +50,39 @@ export default {
 
     if (!m.quoted) return m.reply(`🍒 Responde a una waifu para reclamarla.`)
 
-   // chatConfig.users ||= {}
-   // chatConfig.personajesReservados ||= []
+    //chatConfig.personajesReservados ||= []
 
-    const quotedMessage = normalize(m.quoted.body || m.quoted.text || '')
-    const reservedCharacter = chatConfig.personajesReservados.find((p) =>
-      quotedMessage.includes(normalize(p.name)),
-    )
+    let reservedCharacter = null
+    const quotedId = m.quoted?.id
+    
+    if (quotedId) {
+      reservedCharacter = chatConfig.personajesReservados.find(p => p.messageId === quotedId)
+    }
+
+    if (!reservedCharacter && m.quoted.body) {
+      const quotedMessage = normalize(m.quoted.body || m.quoted.text || '')
+      reservedCharacter = chatConfig.personajesReservados.find(p =>
+        quotedMessage.includes(normalize(p.name))
+      )
+    }
 
     if (!reservedCharacter) {
       const claimedEntry = Object.entries(chatConfig.users).find(([_, u]) =>
-        u.characters?.some((c) => quotedMessage.includes(normalize(c.name))),
+        u.characters?.some(c => {
+          if (!m.quoted.body) return false
+          const quotedMsg = normalize(m.quoted.body || m.quoted.text || '')
+          return quotedMsg.includes(normalize(c.name))
+        })
       )
+      
       if (claimedEntry) {
         const [claimerId, u] = claimedEntry
-        const claimedChar = u.characters.find((c) => quotedMessage.includes(normalize(c.name)))
+        const claimedChar = u.characters.find(c => {
+          if (!m.quoted.body) return false
+          const quotedMsg = normalize(m.quoted.body || m.quoted.text || '')
+          return quotedMsg.includes(normalize(c.name))
+        })
+        
         if (claimerId === userId) return m.reply(`🌱 Tú ya has reclamado a *${claimedChar.name}*.`)
         const ownerName = db.users[claimerId]?.name || claimerId.split('@')[0]
         return m.reply(
@@ -72,8 +93,9 @@ export default {
     }
 
     const alreadyClaimed = Object.entries(chatConfig.users).find(([_, u]) =>
-      u.characters?.some((c) => normalize(c.name) === normalize(reservedCharacter.name)),
+      u.characters?.some(c => normalize(c.name) === normalize(reservedCharacter.name)),
     )
+    
     if (alreadyClaimed) {
       const [claimerId] = alreadyClaimed
       if (claimerId === userId)
@@ -84,11 +106,9 @@ export default {
       )
     }
 
-    const now = Date.now()
-    if (reservedCharacter.reservedBy && now < reservedCharacter.reservedUntil) {
-      const isUserReserver = reservedCharacter.reservedBy === userId
-      const reserverName =
-        db.users[reservedCharacter.reservedBy]?.name || reservedCharacter.reservedBy.split('@')[0]
+    if (reservedCharacter.userId && now < reservedCharacter.reservedUntil) {
+      const isUserReserver = reservedCharacter.userId === userId
+      const reserverName = db.users[reservedCharacter.userId]?.name || reservedCharacter.userId.split('@')[0]
       const secondsLeft = ((reservedCharacter.reservedUntil - now) / 1000).toFixed(1)
       if (!isUserReserver)
         return m.reply(
@@ -100,7 +120,7 @@ export default {
       reservedCharacter.expiresAt &&
       now > reservedCharacter.expiresAt &&
       !reservedCharacter.user &&
-      !(reservedCharacter.reservedBy && now < reservedCharacter.reservedUntil)
+      !(reservedCharacter.userId && now < reservedCharacter.reservedUntil)
     ) {
       const expiredTime = ((now - reservedCharacter.expiresAt) / 1000).toFixed(1)
       return m.reply(
@@ -108,7 +128,6 @@ export default {
       )
     }
 
-   // chatConfig.users[userId] ||= { characters: [], characterCount: 0, totalRwcoins: 0 }
     const userData = chatConfig.users[userId]
 
     if (user.coins < reservedCharacter.value)
@@ -116,7 +135,6 @@ export default {
         `🌱 No tienes suficiente *${monedas}* para comprar a *${reservedCharacter.name}*.`,
       )
 
-   // userData.characters ||= []
     userData.characters.push({
       name: reservedCharacter.name,
       value: reservedCharacter.value,
@@ -130,14 +148,12 @@ export default {
     userData.characterCount++
     userData.totalRwcoins += reservedCharacter.value
     chatConfig.personajesReservados = chatConfig.personajesReservados.filter(
-      (p) => p.id !== reservedCharacter.id,
+      p => p.id !== reservedCharacter.id,
     )
     user.buyCooldown = now + 15 * 60000
     user.coins -= reservedCharacter.value
 
     const displayName = db.users[userId]?.name || userId.split('@')[0]
-    delete reservedCharacter.reservedBy
-    delete reservedCharacter.reservedUntil
     const duration = ((now - reservedCharacter.expiresAt + 60000) / 1000).toFixed(1)
 
     const frases = [
@@ -151,9 +167,9 @@ export default {
       `*${displayName}* llevó a *${reservedCharacter.name}* a explorar el multiverso`,
       `*${reservedCharacter.name}* ahora es fiel compañero de *${displayName}* en mil aventuras`,
       `*${displayName}* robó el corazón de *${reservedCharacter.name}* con una mirada`,
-      `*${reservedCharacter.name}* fue elegido por *${displayName}* para gobernar juntos el reino`,
+      `*${displayName}* fue elegido por *${reservedCharacter.name}* para gobernar juntos el reino`,
       `*${displayName}* encendió la chispa en *${reservedCharacter.name}*, y no hubo marcha atrás`,
-      `*${reservedCharacter.name}* cayó rendido ante los encantos de *${displayName}*`,
+      `*${displayName}* cayó rendido ante los encantos de *${displayName}*`,
       `*${displayName}* invitó a *${reservedCharacter.name}* a una noche inolvidable bajo las estrellas`,
       `*${displayName}* desató emociones intensas en *${reservedCharacter.name}* con solo un suspiro`,
       `*${reservedCharacter.name}* y *${displayName}* desaparecieron entre susurros y miradas ardientes`,
