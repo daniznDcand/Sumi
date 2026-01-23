@@ -7,7 +7,7 @@ const limpiarPersonajesReservados = () => {
     for (const chatId of Object.keys(chats)) {
       const chat = chats[chatId]
       if (!chat.personajesReservados || !Array.isArray(chat.personajesReservados)) {
-        chat.personajesReservados = []
+       // chat.personajesReservados = []
         continue
       }      
       const nuevosPersonajesReservados = chat.personajesReservados.filter(personaje => {
