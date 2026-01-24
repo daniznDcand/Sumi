@@ -180,13 +180,7 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
     client.sendMessage(jid, { text: text, ...options }, { quoted })
 
   client.ev.on("connection.update", async (update) => {
-    const {
-      qr,
-      connection,
-      lastDisconnect,
-      isNewLogin,
-      receivedPendingNotifications,
-    } = update
+    const { qr, connection, lastDisconnect, isNewLogin, receivedPendingNotifications, } = update
 
     if (qr && !usarCodigo) {
       qrcode.generate(qr, { small: true })
@@ -195,9 +189,7 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
     if (connection === "close") {
       const reason = lastDisconnect?.error?.output?.statusCode || 0;
       if (reason === DisconnectReason.connectionLost) {
-        log.warning(
-          "Se perdió la conexión al servidor, intento reconectarme..",
-        )
+        log.warning("Se perdió la conexión al servidor, intento reconectarme..")
         startBot()
       } else if (reason === DisconnectReason.connectionClosed) {
         log.warning("Conexión cerrada, intentando reconectarse...")
@@ -226,9 +218,7 @@ return console.log(chalk.bold.white(chalk.bgMagenta(`🪶  CÓDIGO DE VINCULACI�
         exec("rm -rf ./Sessions/Owner/*")
         process.exit(0)
       } else {
-        client.end(
-          `Motivo de desconexión desconocido : ${reason}|${connection}`,
-        )
+        client.end(`Motivo de desconexión desconocido : ${reason}|${connection}`)
       }
     }
 
