@@ -50,14 +50,14 @@ export default {
       try {
         const res = await fetch(`${api.url}/dl/ytmp3?url=${encodeURIComponent(url)}&key=${api.key}`)
         result = await res.json()
-        if (!result.status || !result.result || !result.result.download) {
+        if (!result.status || !result.data || !result.data.dl) {
           throw new Error('Primera API falló')
         }
       } catch {
         try {
-          const fallback = await fetch(`${api.url}/dl/ytdl?url=${encodeURIComponent(url)}&type=audio&key=${api.key}`)
+          const fallback = await fetch(`${api.url}/dl/youtubeplay?query=${query}&key=${api.key}`)
           result = await fallback.json()
-          if (!result.status || !result.result || !result.result.dl) {
+          if (!result.status || !result.data || !result.data.download) {
             return m.reply('🌵 No se pudo descargar el *audio*, intenta más tarde.')
           }
         } catch {
@@ -65,9 +65,8 @@ export default {
         }
       }
 
-      const audioTitle = result.result.title
-      const dlUrl = result.result.download || result.result.dl
-      const thumbUrl = result.result.thumbnail
+      const audioTitle = result.data.title
+      const dlUrl = result.data.download || result.data.dl
 
       const audioBuffer = await getBuffer(dlUrl)
       let mensaje;
