@@ -7,7 +7,6 @@ global.version = '^2.0'
 
 global.api = {
   url: 'https://api.stellarwa.xyz',
-  url2: 'https://sylphy.xyz',
   key: 'ApiKey'
 }
 
