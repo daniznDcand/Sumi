@@ -744,13 +744,6 @@
     "keyword": "ichika_(blue_archive)"
   },
   {
-    "name": "Hina",
-    "value": 38199,
-    "gender": "Mujer",
-    "source": "Blue Archive",
-    "keyword": "hina_(blue_archive)"
-  },
-  {
     "name": "Yuuka",
     "value": 38298,
     "gender": "Mujer",
@@ -777,13 +770,6 @@
     "gender": "Mujer",
     "source": "Blue Archive",
     "keyword": "karin_(blue_archive)"
-  },
-  {
-    "name": "Aris",
-    "value": 8263,
-    "gender": "Mujer",
-    "source": "Blue Archive",
-    "keyword": "aris_(blue_archive)"
   },
   {
     "name": "Miku Nakano",
@@ -2186,5 +2172,481 @@
     "gender": "Mujer",
     "source": "Steins;Gate",
     "keyword": "labcoat"
+  },
+  {
+    "name": "Rudo Surebrec",
+    "value": 648330,
+    "gender": "Hombre",
+    "source": "Gachiakuta",
+    "keyword": "rudo_surebrec"
+  },
+  {
+    "name": "Amo Empool",
+    "value": 398743,
+    "gender": "Mujer",
+    "source": "Gachiakuta",
+    "keyword": "amo_empool"
+  },
+  {
+    "name": "Rarity",
+    "value": 879691,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "rarity_(my_little_pony)"
+  },
+  {
+    "name": "Twilight Sparkle",
+    "value": 69619,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "twilight_sparkle"
+  },
+  {
+    "name": "Fluttershy",
+    "value": 343745,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "fluttershy"
+  },
+  {
+    "name": "Rainbow Dash",
+    "value": 509929,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "rainbow_dash"
+  },
+  {
+    "name": "Queen Chrysalis",
+    "value": 158092,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "queen_chrysalis"
+  },
+  {
+    "name": "Pinkie Pie",
+    "value": 42097,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "pinkie_pie"
+  },
+  {
+    "name": "Sunset Shimmer",
+    "value": 475118,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "sunset_shimmer"
+  },
+  {
+    "name": "Trixie Lulamoon",
+    "value": 676377,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "trixie_lulamoon"
+  },
+  {
+    "name": "Applejack",
+    "value": 647899,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "applejack"
+  },
+  {
+    "name": "Starlight Glimmer",
+    "value": 15495,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "starlight_glimmer"
+  },
+  {
+    "name": "Princess Celestia",
+    "value": 858132,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "princess_celestia"
+  },
+  {
+    "name": "Flash Sentry",
+    "value": 435484,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "flash_sentry"
+  },
+  {
+    "name": "Princess Luna",
+    "value": 219467,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "princess_luna"
+  },
+  {
+    "name": "Daring Do",
+    "value": 944376,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "daring_do"
+  },
+  {
+    "name": "Diacord",
+    "value": 764469,
+    "gender": "Hombre",
+    "source": "My Little Pony",
+    "keyword": "discord_(my_little_pony)"
+  },
+  {
+    "name": "Raichu",
+    "value": 744697,
+    "gender": "Desconocido",
+    "source": "Pokemon",
+    "keyword": "raichu"
+  },
+  {
+    "name": "Derpy Hooves",
+    "value": 313785,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "derpy_hooves"
+  },
+  {
+    "name": "Sonata Dusk",
+    "value": 67952,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "sonata_dusk"
+  },
+  {
+    "name": "Lemon Zest",
+    "value": 652669,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "lemon_zest"
+  },
+  {
+    "name": "Adagio Dazzle",
+    "value": 7342,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "adagio_dazzle"
+  },
+  {
+    "name": "Aria Blaze",
+    "value": 304379,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "aria_blaze"
+  },
+  {
+    "name": "Spike",
+    "value": 335457,
+    "gender": "Hombre",
+    "source": "My Little Pony",
+    "keyword": "spike_(my_little_pony)"
+  },
+  {
+    "name": "Zecora",
+    "value": 100142,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "zecora"
+  },
+  {
+    "name": "Marble Pie",
+    "value": 403049,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "marble_pie"
+  },
+  {
+    "name": "King Sombra",
+    "value": 537538,
+    "gender": "Hombre",
+    "source": "My Little Pony",
+    "keyword": "king_sombra"
+  },
+  {
+    "name": "Flurry Heart",
+    "value": 438647,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "flurry_heart"
+  },
+  {
+    "name": "Pear Butter",
+    "value": 737296,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "pear_butter_(my_little_pony)"
+  },
+  {
+    "name": "Vinyl Scratch",
+    "value": 236697,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "vinyl_scratch"
+  },
+  {
+    "name": "Flim",
+    "value": 646133,
+    "gender": "Mujer",
+    "source": "My Little Pony",
+    "keyword": "flim_(my_little_pony)"
+  },
+  {
+    "name": "Akame",
+    "value": 85768,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "akame_(akame_ga_kill!)"
+  },
+  {
+    "name": "Sheele",
+    "value": 952499,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "sheele"
+  },
+  {
+    "name": "Najenda",
+    "value": 183638,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "najenda"
+  },
+  {
+    "name": "Chelsea",
+    "value": 10973,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "chelsea_(akame_ga_kill!)"
+  },
+  {
+    "name": "Tatsumi",
+    "value": 167467,
+    "gender": "Hombre",
+    "source": "Akame Ga Kill!",
+    "keyword": "tatsumi_(akame_ga_kill!)"
+  },
+  {
+    "name": "Esdeath",
+    "value": 277470,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "esdeath"
+  },
+  {
+    "name": "Mine",
+    "value": 108239,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "mine_(akame_ga_kill!)"
+  },
+  {
+    "name": "Bulat",
+    "value": 841282,
+    "gender": "Hombre",
+    "source": "Akame Ga Kill!",
+    "keyword": "bulat"
+  },
+  {
+    "name": "Susanoo",
+    "value": 448140,
+    "gender": "Hombre",
+    "source": "Akame Ga Kill!",
+    "keyword": "susanoo"
+  },
+  {
+    "name": "Leone",
+    "value": 360876,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "leone_(akame_ga_kill!)"
+  },
+  {
+    "name": "Lubbock",
+    "value": 942898,
+    "gender": "Hombre",
+    "source": "Akame Ga Kill!",
+    "keyword": "lubbock"
+  },
+  {
+    "name": "Kurome",
+    "value": 961074,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "kurome_(akame_ga_kill!)"
+  },
+  {
+    "name": "Nyau",
+    "value": 987589,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "nyau_(akame_ga_kill!)"
+  },
+  {
+    "name": "Mez",
+    "value": 586738,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "mez_(akame_ga_kill!)"
+  },
+  {
+    "name": "Spear",
+    "value": 286002,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "spear_(akame_ga_kill!)"
+  },
+  {
+    "name": "Remus",
+    "value": 949206,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "remus_(akame_ga_kill!)"
+  },
+  {
+    "name": "Seryu Ubiquitous",
+    "value": 206279,
+    "gender": "Mujer",
+    "source": "Akame Ga Kill!",
+    "keyword": "seryu_ubiquitous"
+  },
+  {
+    "name": "Wave",
+    "value": 556347,
+    "gender": "Hombre",
+    "source": "Akame Ga Kill!",
+    "keyword": "wave_(akame_ga_kill!)"
+  },
+  {
+    "name": "Hekatonkheires",
+    "value": 558596,
+    "gender": "Desconocido",
+    "source": "Akame Ga Kill!",
+    "keyword": "hekatonkheires"
+  },
+  {
+    "name": "Grace Howard",
+    "value": 648122,
+    "gender": "Mujer",
+    "source": "Zenless Zone Zero",
+    "keyword": "grace_howard"
+  },
+  {
+    "name": "Manato Komano",
+    "value": 221146,
+    "gender": "Hombre",
+    "source": "Zenless Zone Zero",
+    "keyword": "komano_manato"
+  },
+  {
+    "name": "Yidhari",
+    "value": 845946,
+    "gender": "Mujer",
+    "source": "Zenless Zone Zero",
+    "keyword": "yidhari_murphy"
+  },
+  {
+    "name": "Lucia Elowen",
+    "value": 77230,
+    "gender": "Mujer",
+    "source": "Zenless Zone Zero",
+    "keyword": "lucia_elowen"
+  },
+  {
+    "name": "Ye Shunguang",
+    "value": 965714,
+    "gender": "Mujer",
+    "source": "Zenless Zone Zero",
+    "keyword": "ye_shunguang"
+  },
+  {
+    "name": "Seed",
+    "value": 983375,
+    "gender": "Mujer",
+    "source": "Zenless Zone Zero",
+    "keyword": "seed_(zenless_zone_zero)"
+  },
+  {
+    "name": "Dialyn",
+    "value": 27613,
+    "gender": "Mujer",
+    "source": "Zenless Zone Zero",
+    "keyword": "dialyn_(zenless_zone_zero)"
+  },
+  {
+    "name": "Big Daddy",
+    "value": 725888,
+    "gender": "Hombre",
+    "source": "Zenless Zone Zero",
+    "keyword": "big_daddy_(zenless_zone_zero)"
+  },
+  {
+    "name": "Isolde",
+    "value": 25787,
+    "gender": "Mujer",
+    "source": "Zenless Zone Zero",
+    "keyword": "isolde_(zenless_zone_zero)"
+  },
+  {
+    "name": "Anton Ivanov",
+    "value": 916645,
+    "gender": "Hombre",
+    "source": "Zenless Zone Zero",
+    "keyword": "anton_ivanov"
+  },
+  {
+    "name": "Heddy",
+    "value": 326936,
+    "gender": "Mujer",
+    "source": "Zenless Zone Zero",
+    "keyword": "heddy_(zenless_zone_zero)"
+  },
+  {
+    "name": "Hina Sorasaki",
+    "value": 300535,
+    "gender": "Mujer",
+    "source": "Blue Archive",
+    "keyword": "hina_(blue_archive)"
+  },
+  {
+    "name": "Wakamo Kosaka",
+    "value": 370540,
+    "gender": "Mujer",
+    "source": "Blue Archive",
+    "keyword": "wakamo_(blue_archive)"
+  },
+  {
+    "name": "Mine Aomori",
+    "value": 615993,
+    "gender": "Mujer",
+    "source": "Blue Archive",
+    "keyword": "mine_(blue_archive)"
+  },
+  {
+    "name": "Hoshino Takanashi",
+    "value": 499105,
+    "gender": "Mujer",
+    "source": "Blue Archive",
+    "keyword": "hoshino_(blue_archive)"
+  },
+  {
+    "name": "Aris Tendou",
+    "value": 873171,
+    "gender": "Mujer",
+    "source": "Blue Archive",
+    "keyword": "aris_(blue_archive)"
+  },
+  {
+    "name": "Niyaniya",
+    "value": 96083,
+    "gender": "Mujer",
+    "source": "Blue Archive",
+    "keyword": "professor_niyaniya_(blue_archive)"
+  },
+  {
+    "name": "Hibiki Nekozuka",
+    "value": 329695,
+    "gender": "Mujer",
+    "source": "Blue Archive",
+    "keyword": "hibiki_(blue_archive)"
   }
 ]
