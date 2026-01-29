@@ -2648,5 +2648,124 @@
     "gender": "Mujer",
     "source": "Blue Archive",
     "keyword": "hibiki_(blue_archive)"
+  },
+  {
+    "name": "Sans",
+    "value": 954553,
+    "gender": "Hombre",
+    "source": "Undertale",
+    "keyword": "sans_(undertale)"
+  },
+  {
+    "name": "Frisk",
+    "value": 533808,
+    "gender": "Desconocido",
+    "source": "Undertale",
+    "keyword": "frisk_(undertale)"
+  },
+  {
+    "name": "Clover",
+    "value": 107858,
+    "gender": "Desconocido",
+    "source": "Undertale",
+    "keyword": "clover_(undertale_yellow)"
+  },
+  {
+    "name": "Papyrus",
+    "value": 484709,
+    "gender": "Hombre",
+    "source": "Undertale",
+    "keyword": "papyrus_(undertale)"
+  },
+  {
+    "name": "Flowey",
+    "value": 793192,
+    "gender": "Desconocido",
+    "source": "Undertale",
+    "keyword": "flowey_(undertale)"
+  },
+  {
+    "name": "ASGORE",
+    "value": 37508,
+    "gender": "Hombre",
+    "source": "Undertale",
+    "keyword": "asgore_dreemurr"
+  },
+  {
+    "name": "Muffet",
+    "value": 729714,
+    "gender": "Mujer",
+    "source": "Undertale",
+    "keyword": "muffet"
+  },
+  {
+    "name": "Toriel",
+    "value": 378806,
+    "gender": "Mujer",
+    "source": "Undertale",
+    "keyword": "toriel"
+  },
+  {
+    "name": "W. D. Gaster",
+    "value": 464948,
+    "gender": "Hombre",
+    "source": "Undertale",
+    "keyword": "w.d._gaster"
+  },
+  {
+    "name": "Mettaton",
+    "value": 194835,
+    "gender": "Hombre",
+    "source": "Undertale",
+    "keyword": "mettaton"
+  },
+  {
+    "name": "Betty Noire",
+    "value": 786852,
+    "gender": "Mujer",
+    "source": "Undertale",
+    "keyword": "betty_noire"
+  },
+  {
+    "name": "Undyne",
+    "value": 529535,
+    "gender": "Mujer",
+    "source": "Undertale",
+    "keyword": "undyne"
+  },
+  {
+    "name": "Starlo",
+    "value": 636262,
+    "gender": "Hombre",
+    "source": "Undertale",
+    "keyword": "starlo"
+  },
+  {
+    "name": "Annoying Dog",
+    "value": 759863,
+    "gender": "Hombre",
+    "source": "Undertale",
+    "keyword": "annoying_dog"
+  },
+  {
+    "name": "Mettaton Neo",
+    "value": 538671,
+    "gender": "Hombre",
+    "source": "Undertale",
+    "keyword": "mettaton_neo"
+  },
+  {
+    "name": "Ceroba",
+    "value": 661886,
+    "gender": "Mujer",
+    "source": "Undertale",
+    "keyword": "ceroba"
+  },
+  {
+    "name": "Alphys",
+    "value": 710960,
+    "gender": "Mujer",
+    "source": "Undertale",
+    "keyword": "alphys"
   }
 ]
