@@ -15,7 +15,7 @@ global.bot = {
 }
 
 global.msgglobal = '[Error: *TypeError*] fetch failed'
-globalThis.dev = 'ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɴɪɢʜᴛ ʟɪɢʜᴛ ⚡︎'
+globalThis.dev = `ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɪ'ᴍ ᴅɪᴇɢᴏ ⚡︎`
 
 global.mess = {
   socket: '🌵 Este comando solo puede ser ejecutado por un Socket.',
