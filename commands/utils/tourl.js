@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+import axios from 'axios'
 import FormData from 'form-data'
 
 function formatBytes(bytes) {
@@ -8,41 +8,60 @@ function formatBytes(bytes) {
   return `${(bytes / 1024 ** i).toFixed(2)} ${sizes[i]}`
 }
 
+function generateUniqueFilename(mime) {
+  const ext = mime.split('/')[1] || 'bin'
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  let id = Array.from({ length: 8 }, () => chars[Math.floor(Math.random() * chars.length)]).join('')
+  return `${id}.${ext}`
+}
+
+async function uploadToStellar(buffer, mime, token) {
+  const form = new FormData()
+  form.append('file', buffer, { filename: generateUniqueFilename(mime) })
+  const res = await axios.post(`${api.url}/api/cdn/upload`, form, {
+    headers: {
+      ...form.getHeaders(),
+      'x-upload-token': token
+    },
+    maxContentLength: Infinity,
+    maxBodyLength: Infinity
+  })
+  if (!res.data?.url) throw new Error('Respuesta inválida del CDN')
+  return res.data.url
+}
+
 export default {
   command: ['tourl'],
   category: 'utils',
   run: async (client, m, args, command, text, prefix) => {
-    try {
-      const q = m.quoted || m
-      const mime = q.mimetype || q.msg?.mimetype || ''
+    const botId = client.user.id.split(':')[0] + '@s.whatsapp.net'
+    const isOficialBot = botId === global.client.user.id.split(':')[0] + '@s.whatsapp.net'
+    const isPremiumBot = global.db.data.settings[botId]?.botprem === true
+    const isModBot = global.db.data.settings[botId]?.botmod === true
 
-      if (!mime) return m.reply(`🌾 Envía una *imagen* junto al comando *${prefix + command}*`)
-      if (!/image\/(png|jpe?g|gif)|video\/mp4/.test(mime)) {
-        return m.reply(`🌱 El formato *${mime}* no es compatible`)
-      }
-
-      const buffer = await q.download()
-      const url = await uploadToUguu(buffer, mime)
-
-      if (!url) return m.reply('🍒 No se pudo *subir* la imagen')
-
-      const userName = global.db.data.users[m.sender]?.name || 'Usuario'
-      const peso = formatBytes(buffer.length)
-
-      const msg = `🍒 *Upload To Uguu*\n\n> 🌾 *Link ›* ${url}\n> 🌾 *Peso ›* ${peso}\n> 🌾 *Solicitado por ›* ${userName}\n\n${dev}`
-
-      return m.reply(msg)
-    } catch (err) {
-      console.error(err)
-      return m.reply(msgglobal)
+    if (!isOficialBot && !isPremiumBot && !isModBot) {
+      return client.reply(m.chat, mess.solosub, m)
     }
-  },
-}
 
-async function uploadToUguu(buffer, mime) {
-  const body = new FormData()
-  body.append('files[]', buffer, `file.${mime.split('/')[1]}`)
-  const res = await fetch('https://uguu.se/upload.php', { method: 'POST', body, headers: body.getHeaders() })
-  const json = await res.json()
-  return json.files?.[0]?.url
+    const q = m.quoted || m
+    const mime = (q.msg || q).mimetype || ''
+    if (!mime) {
+      return client.reply(
+        m.chat,
+        `✿ Por favor, responde a una imagen o video con el comando *${prefix + command}* para convertirlo en una URL.`,
+        m
+      )
+    }
+
+    try {
+      const media = await q.download()
+      const token = `${api.key2}`
+      const link = await uploadToStellar(media, mime, token)
+      const userName = global.db.data.users[m.sender]?.name || 'Usuario'
+      const upload = `𖹭 ❀ *Upload To Stellar*\n\nׅ  ׄ  ✿   ׅ り *Link ›* ${link}\nׅ  ׄ  ✿   ׅ り *Peso ›* ${formatBytes(media.length)}\nׅ  ׄ  ✿   ׅ り *Solicitado por ›* ${userName}\n\n${dev}`
+      await client.sendContextInfoIndex(m.chat, upload, {}, m, true, {})
+    } catch (e) {
+      await m.reply(msgglobal)
+    }
+  }
 }
