@@ -14,7 +14,7 @@ export default {
         name: 'Creador Principal 🥗',
         org: dev,
         email: 'danieldevelop3p@gmail.com',
-        region: 'Peru',
+        region: 'Perú',
         website: 'https://api.stellarwa.xyz',
         note: '🐸 Lider oficial de sex legak.'
       }
