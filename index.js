@@ -64,7 +64,7 @@ let phoneInput = "";
 
 const { say } = cfonts
 
-say('alya san', {
+say('Sumi', {
 align: 'center',           
 gradient: ['red', 'blue'] 
 })
