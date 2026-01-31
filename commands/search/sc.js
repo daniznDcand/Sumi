@@ -33,7 +33,7 @@ export default {
         if (item.release_date) message += `   📅 *Fecha:* ${item.release_date}\n`
         if (item.play_count) message += `   ▶️ *Reproducciones:* ${item.play_count}\n`
         if (item.like_count) message += `   ❤️ *Likes:* ${item.like_count}\n`
-        message += `   🔗 [Escuchar](${item.url})\n\n`
+        message += `   🧩 ${item.url}\n\n`
       })
 
       message += `📌 Usa */scaudio <nombre>* para descargar`
