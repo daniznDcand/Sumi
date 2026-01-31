@@ -1,7 +1,7 @@
 import fs from 'fs';
 import chalk from 'chalk';
 
-global.owner = ['5492916450307', '5216671548329']
+global.owner = ['51994143761', '51994143761']
 global.sessionName = 'Sessions/Owner'
 global.version = '^2.0'
 
@@ -16,7 +16,7 @@ global.bot = {
 }
 
 global.msgglobal = '[Error: *TypeError*] fetch failed'
-globalThis.dev = `ᴘᴏᴡᴇʀᴇᴅ ʙʏ ɪ'ᴍ ᴅɪᴇɢᴏ ⚡︎`
+globalThis.dev = `Powered by Daniel 🇦🇱`
 
 global.mess = {
   socket: '🌵 Este comando solo puede ser ejecutado por un Socket.',
