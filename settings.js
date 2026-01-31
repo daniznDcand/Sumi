@@ -5,7 +5,7 @@ global.owner = ['51994143761', '51994143761', '5492916450307']
 global.sessionName = 'Sessions/Owner'
 global.version = '^2.0'
 
-{
+global.api = {
   url: 'https://api.stellarwa.xyz',
   key: 'stellar-wCnAirJG',
   key2: 'dc4ee5c08193194263ec466a99ceb3f9'
