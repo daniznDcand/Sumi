@@ -5,10 +5,10 @@ global.owner = ['51994143761', '51994143761', '5492916450307']
 global.sessionName = 'Sessions/Owner'
 global.version = '^2.0'
 
-global.api = {
+{
   url: 'https://api.stellarwa.xyz',
-  key: 'ZyxlJs',
-  key2: '1bcd4698ce6c75217275c9607f01fd99'
+  key: 'stellar-wCnAirJG',
+  key2: 'dc4ee5c08193194263ec466a99ceb3f9'
 }
 
 global.bot = {
