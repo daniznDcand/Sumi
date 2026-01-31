@@ -26,6 +26,8 @@ export default {
 
       let message = '🎧 *RESULTADOS DE SOUNDCLOUD*\n\n'
 
+      let thumbnail = data.results[0].thumbnail
+
       data.results.slice(0, 5).forEach((item, i) => {
         message += `*${i + 1}.* ${item.title || 'Sin título'}\n`
         message += `   👤 *Autor:* ${item.author?.name || 'Desconocido'}\n`
@@ -37,8 +39,9 @@ export default {
       })
 
       message += `📌 Usa */scaudio <nombre>* para descargar`
+     let caption = message
 
-      await m.reply(message)
+      await client.sendMessage(m.chat, { image: { url: thumbnail }, caption }, { quoted: m })
       await m.react('✅')
 
     } catch (e) {
